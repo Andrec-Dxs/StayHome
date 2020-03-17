@@ -86,7 +86,8 @@ namespace StayHome.ViewModels.ViewModels
 
         private bool CanEnroll()
         {
-            return _district != string.Empty && _county != string.Empty && _parish != string.Empty;
+            return !string.IsNullOrEmpty(Parish) && !string.IsNullOrEmpty(County) && !string.IsNullOrWhiteSpace(District);
+                         
         }
     }
 }
