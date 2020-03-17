@@ -1,5 +1,5 @@
-﻿using System;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 
 namespace StayHome.ViewModels.ViewModels
 {
@@ -15,11 +15,11 @@ namespace StayHome.ViewModels.ViewModels
             base.Cleanup();
         }
 
-        private string _phoneNumber;
-        public string PhoneNumber
+        private string _emailPhone;
+        public string EmailPhone
         {
-            get { return _phoneNumber; }
-            set { Set(() => PhoneNumber, ref _phoneNumber, value); }
+            get { return _emailPhone; }
+            set { Set(() => EmailPhone, ref _emailPhone, value); }
         }
 
         private string _password;
@@ -34,7 +34,10 @@ namespace StayHome.ViewModels.ViewModels
         {
             get
             {   //Continue from here
-                return _loginCommand;
+                return _loginCommand ?? (_loginCommand = new RelayCommand(async() =>
+                {
+                    _navigationService.NavigateTo(ViewModelLocator.UserListView);
+                }));
             }
         }
     }

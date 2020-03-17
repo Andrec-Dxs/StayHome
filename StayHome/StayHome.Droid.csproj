@@ -68,6 +68,18 @@
     <Compile Include="Activities\EditUserActivity.cs" />
     <Compile Include="Activities\UserListActivity.cs" />
     <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Activities\LoginActivity.ui.cs">
+      <DependentUpon>LoginActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\UserListActivity.ui.cs">
+      <DependentUpon>UserListActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\EditUserActivity.ui.cs">
+      <DependentUpon>EditUserActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\AddUserActivity.ui.cs">
+      <DependentUpon>AddUserActivity.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -105,6 +117,14 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
     <AndroidResource Include="Resources\layout\activity_add_user.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_login.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_user_list.axml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

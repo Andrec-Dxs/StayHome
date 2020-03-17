@@ -5,40 +5,70 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <RelativeLayout
-    android:id="@+id/add_user_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <EditText
-        android:id="@+id/address_et1"
+    <LinearLayout
+        android:id="@+id/add_user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/parish_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Concelho"
-        android:layout_margin="10dp"/>
-    <EditText
-        android:id="@+id/address_et2"
+        android:layout_marginTop="20dp">   
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/parish_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Freguesia"
+            android:layout_margin="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/county_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Freguesia"
-        android:layout_below="@id/address_et1"
-        android:layout_margin="10dp"/>
-    <EditText
-        android:id="@+id/contact_et"
+        android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+               android:id="@+id/county_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Concelho"
+                android:layout_margin="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/district_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Numero Telefone"
-        android:inputType="phone"
-        android:layout_below="@id/address_et2"
-        android:layout_margin="10dp"/>
-    <EditText
-        android:id="@+id/fever_et"
-        android:layout_width="80dp"
-        android:layout_margin="10dp"
-        android:hint="Febre"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/contact_et"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+               android:id="@+id/district_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Distrito"
+                android:layout_margin="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+               android:id="@+id/phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numero Telefone"
+                android:inputType="phone"
+                android:layout_margin="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/fever_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/fever_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Febre"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"/>
+    </android.support.design.widget.TextInputLayout> 
+    
     <LinearLayout
         android:id="@+id/body_pain_layout"
         android:orientation="horizontal"
@@ -73,33 +103,29 @@
             android:layout_margin="10dp"
             android:text="Contacto com Doente Identificado"/>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/risk_patient_layout"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_below="@id/contact_layout"
-        android:layout_height="wrap_content">   
-        <CheckBox
-            android:id="@+id/risk_patient_cb"
-            android:layout_width="30dp"
-            android:layout_margin="10dp"
-            android:layout_height="30dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Paciente Risco"/>
-    </LinearLayout>
+	<LinearLayout
+		android:id="@+id/risk_patient_layout"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_below="@id/contact_layout"
+		android:layout_height="match_parent">
+		<CheckBox
+			android:id="@+id/risk_patient_cb"
+			android:layout_width="30dp"
+			android:layout_margin="10dp"
+			android:layout_height="30dp"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:text="Paciente Risco"/>
+	</LinearLayout>
     <Button
-        android:id="@+id/submit_btn"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/risk_patient_layout"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/submit_new_user_btn"
+        android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="20dp"
         android:text="Submeter"
         android:layout_height="wrap_content"/>   
-</RelativeLayout>
+    </LinearLayout>
 </ScrollView>

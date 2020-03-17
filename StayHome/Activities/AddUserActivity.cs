@@ -1,32 +1,36 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V7.App;
-using Android.Views;
-using Android.Widget;
+using GalaSoft.MvvmLight.Helpers;
 using StayHome.ViewModels.ViewModels;
 
 namespace StayHome.Droid.Activities
 {
     [Activity(Theme = "@style/AppTheme.NoActionBar")]
-    public class AddUserActivity : BaseActivity<AddUserViewModel>
+    public partial class AddUserActivity : BaseActivity<AddUserViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_add_user);
-           
-            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            //fab.Click += FabOnClick;
+
+            SetBindings();
         }
 
-        private void FabOnClick(object sender, EventArgs eventArgs)
+        protected override void SetBindings()
         {
-           //Relay command for add user
+            base.SetBindings();
+
+            _bindings.Add(this.SetBinding(() => ViewModel.Parish, () => ParishEditText.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.County, () => CountyEditText.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.District, () => DistrictEditText.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.PhoneNumber, () => PhoneNumberEditText.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.Fever, () => FeverEditText.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.HasBodyPain, () => HasBodyPainCb.Checked, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.WasInContactWithIllness, () => WasInContactWithIllnessCb.Checked, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.IsRiskPatient, () => IsRiskPatientCb.Checked, BindingMode.TwoWay));
+
+            SubmitNewuserButton.SetCommand(ViewModel.SubmitNewUserCommand);
         }
-        
     }
 }
 
