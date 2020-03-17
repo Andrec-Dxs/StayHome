@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="Resources\Resource.designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MvvmLightStd10" Version="5.4.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StayHome.Core\StayHome.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\AboutResources.txt" />
+    <None Remove="Resources\values\strings.xml" />
+  </ItemGroup>
+</Project>
