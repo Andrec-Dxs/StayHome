@@ -5,11 +5,12 @@ using StayHome.ViewModels.ViewModels;
 
 namespace StayHome.Droid.Activities
 {
-    [Activity(Label = "Login", Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true)]
+    [Activity(MainLauncher = true, Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : BaseActivity<LoginViewModel>
     {
         public LoginActivity()
         {
+
         }
     }
 }

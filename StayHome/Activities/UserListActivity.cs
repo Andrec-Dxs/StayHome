@@ -5,7 +5,7 @@ using StayHome.ViewModels.ViewModels;
 
 namespace StayHome.Droid.Activities
 {
-    [Activity(Label = "User List", Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true)]
+    [Activity(Label = "User List", Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = ScreenOrientation.Portrait)]
     public class UserListActivity : BaseActivity<UserListViewModel>
     {
         public UserListActivity()
