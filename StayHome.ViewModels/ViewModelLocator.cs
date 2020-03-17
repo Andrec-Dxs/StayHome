@@ -16,7 +16,7 @@ namespace StayHome.ViewModels
             return SimpleIoc.Default.GetInstance<T>();
         }
 
-        private void RegisterViewModels()
+        public ViewModelLocator()
         {
             SimpleIoc.Default.Register<AddUserViewModel>();
             SimpleIoc.Default.Register<UserListViewModel>();
@@ -24,9 +24,36 @@ namespace StayHome.ViewModels
             SimpleIoc.Default.Register<LoginViewModel>();
         }
 
-        public static void ClearViewModels()
+        public AddUserViewModel AddUserViewModel
         {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<AddUserViewModel>();
+            }
+        }
 
+        public UserListViewModel UserListViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<UserListViewModel>();
+            }
+        }
+
+        public LoginViewModel LoginViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<LoginViewModel>();
+            }
+        }
+
+        public EditUserViewModel EditUserViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<EditUserViewModel>();
+            }
         }
     }
 }

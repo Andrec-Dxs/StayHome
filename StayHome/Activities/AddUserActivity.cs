@@ -10,21 +10,17 @@ using StayHome.ViewModels.ViewModels;
 
 namespace StayHome.Droid.Activities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class AddUserActivity : BaseActivity<AddUserViewModel>
     {
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
-
+            SetContentView(Resource.Layout.activity_add_user);
            
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            //fab.Click += FabOnClick;
         }
-
-       
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {

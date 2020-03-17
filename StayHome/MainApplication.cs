@@ -23,6 +23,7 @@ namespace StayHome.Droid
                     _locator = new ViewModelLocator();
                     var nav = new StateKeepNavigationService();
 
+
                     nav.Configure(
                         ViewModelLocator.LoginView,
                         typeof(LoginActivity));
